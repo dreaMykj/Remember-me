@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a conexão foi estabelecida
     if ($conn) {
-        $sql = "INSERT INTO clientes (nomeProSaude, cpfProSaude, dataNascimentoProSaude, CORENProSaude, emailProSaude, telefoneProSaude, enderecoProSaude, numeroEnderecoProSaude, bairroProSaude, cidadeProSaude, complementoProSaude, CEPProSaude, senhaProSaude) 
+        $sql = "INSERT INTO tb_ProSaude (nomeProSaude, cpfProSaude, dataNascimentoProSaude, CORENProSaude, emailProSaude, telefoneProSaude, enderecoProSaude, numeroEnderecoProSaude, bairroProSaude, cidadeProSaude, complementoProSaude, CEPProSaude, senhaProSaude) 
         VALUES ('$nome_proSaude', '$cpf_proSaude', '$dataNascimento_proSaude', '$COREN_proSaude', '$email_proSaude', '$telefone_proSaude', '$endereco_proSaude', '$numeroEndereco_proSaude', '$bairro_proSaude','$cidade_proSaude', '$complemento_proSaude', '$CEP_proSaude', '$senha_proSaude')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Novo cliente cadastrado com sucesso!";
+            echo "Novo profissional da saúde cadastrado com sucesso!";
         } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }

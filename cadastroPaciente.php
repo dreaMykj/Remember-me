@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a conexão foi estabelecida
     if ($conn) {
-        $sql = "INSERT INTO clientes (nomePaciente, cpfPaciente, dataNascimentoPaciente, CORENPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
+        $sql = "INSERT INTO tb_paciente (nomePaciente, cpfPaciente, dataNascimentoPaciente, CORENPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
         VALUES ('$nome_paciente', '$cpf_paciente', '$dataNascimento_paciente', '$COREN_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente','$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_cuidador')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Novo cliente cadastrado com sucesso!";
+            echo "Novo paciente cadastrado com sucesso!";
         } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Nome: <input type="text" name="nomePaciente" required><br><br>
         CPF: <input type="number" name="CPFPaciente" required><br><br>
         Data de Nascimento: <input type="text" name="dataNascimentoPaciente" required><br><br>
-        COREN: <input type="number" name="CORENPaciente" required><br><br>
+        Cartão do SUS: <input type="number" name="SUSPaciente" required><br><br>
         Email: <input type="email" name="emailPaciente" required><br><br>
         Telefone: <input type="number" name="telefonePaciente" required><br><br>
         Endereço: <input type="text" name="enderecoPaciente" required><br><br>
