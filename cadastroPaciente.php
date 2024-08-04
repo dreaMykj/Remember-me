@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf_paciente = $_POST['cpfPaciente'];
     $SUS_paciente = $_POST['SUSPaciente'];
     $dataNascimento_paciente = $_POST['dataNascimentoPaciente'];
-    $email_P = $_POST['emailPaciente'];
+    $email_paciente = $_POST['emailPaciente'];
     $telefone_paciente = $_POST['telefonePaciente'];
     $endereco_paciente = $_POST['enderecoPaciente'];
     $numeroEndereco_paciente = $_POST['numeroEnderecoPaciente'];
