@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a conexão foi estabelecida
     if ($conn) {
-        $sql = "INSERT INTO tb_paciente (nomePaciente, cpfPaciente, dataNascimentoPaciente, CORENPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
+        $sql = "INSERT INTO tb_paciente (nomePaciente, cpfPaciente, dataNascimentoPaciente, SUSPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
         VALUES ('$nome_paciente', '$cpf_paciente', '$dataNascimento_paciente', $SUS_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente','$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_cuidador')";
 
         if ($conn->query($sql) === TRUE) {
