@@ -3,7 +3,7 @@ include 'conexaoPaciente.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome_paciente = $_POST['nomePaciente'];
-    $cpf_paciente = $_POST['cpfPaciente'];
+    $cpf_paciente = $_POST['CPFPaciente'];
     $SUS_paciente = $_POST['SUSPaciente'];
     $dataNascimento_paciente = $_POST['dataNascimentoPaciente'];
     $email_paciente = $_POST['emailPaciente'];
@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a conexão foi estabelecida
     if ($conn) {
-        $sql = "INSERT INTO tb_paciente (nomePaciente, cpfPaciente, dataNascimentoPaciente, SUSPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
-        VALUES ('$nome_paciente', '$cpf_paciente', '$dataNascimento_paciente', $SUS_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente','$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_cuidador')";
+        $sql = "INSERT INTO tb_paciente (nomePaciente, CPFPaciente, dataNascimentoPaciente, SUSPaciente, emailPaciente, telefonePaciente, enderecoPaciente, numeroEnderecoPaciente, bairroPaciente, cidadePaciente, complementoPaciente, CEPPaciente, senhaPaciente) 
+        VALUES ('$nome_paciente', '$cpf_paciente', '$dataNascimento_paciente', $SUS_paciente', '$email_paciente', '$telefone_paciente', '$endereco_paciente', '$numeroEndereco_paciente', '$bairro_paciente','$cidade_paciente', '$complemento_paciente', '$CEP_paciente', '$senha_paciente')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Novo paciente cadastrado com sucesso!";
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Cidade: <input type="text" name="cidadePaciente" required><br><br>
         Complemento: <input type="text" name="complementoPaciente" required><br><br>
         CEP: <input type="number" name="CEPPaciente" required><br><br>
-        Senha: <input type="number" name="senhaPaciente" required><br><br>
+        Senha: <input type="text" name="senhaPaciente" required><br><br>
 
         <input type="submit" value="Cadastrar">
     </form>
