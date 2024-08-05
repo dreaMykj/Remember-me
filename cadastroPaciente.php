@@ -1,5 +1,5 @@
 <?php
-include 'conexaoPaciente.php';
+include 'conexaoBanco.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome_paciente = $_POST['nomePaciente'];

@@ -1,5 +1,5 @@
 <?php
-include 'conexaoProSaude.php';
+include 'conexaoBanco.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome_proSaude = $_POST['nomeProSaude'];
@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a conexão foi estabelecida
     if ($conn) {
-        $sql = "INSERT INTO tb_ProSaude (nomeProSaude, cpfProSaude, dataNascimentoProSaude, CORENProSaude, emailProSaude, telefoneProSaude, enderecoProSaude, numeroEnderecoProSaude, bairroProSaude, cidadeProSaude, complementoProSaude, CEPProSaude, senhaProSaude) 
-        VALUES ('$nome_proSaude', '$cpf_proSaude', '$dataNascimento_proSaude', '$COREN_proSaude', '$email_proSaude', '$telefone_proSaude', '$endereco_proSaude', '$numeroEndereco_proSaude', '$bairro_proSaude','$cidade_proSaude', '$complemento_proSaude', '$CEP_proSaude', '$senha_proSaude')";
+        $sql = "INSERT INTO tb_prosaude (nomeProSaude,CORENouCRMProSaude, telefoneProSaude, emailProSaude, senhaProSaude) 
+        VALUES ('$nome_proSaude','$CORENouCRM_proSaude','$telefone_proSaude','$email_proSaude','$senha_proSaude')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Novo profissional da saúde cadastrado com sucesso!";
@@ -38,8 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         COREN/CRM: <input type="number" name="CORENouCRMProSaude" required><br><br>
         Telefone: <input type="number" name="telefoneProSaude" required><br><br>
         Email: <input type="email" name="emailProSaude" required><br><br>
-        Endereço: <input type="text" name="enderecoProSaude" required><br><br>
-        Senha: <input type="number" name="senhaProSaude" required><br><br>
+        Senha: <input type="text" name="senhaProSaude" required><br><br>
 
         <input type="submit" value="Cadastrar">
     </form>
