@@ -15,12 +15,32 @@ header {
     align-items: center;
     justify-content: center;
     width: 392px;
-    background: linear-gradient(to bottom, #52E3DB, #58AAD9);
+    background: linear-gradient(to bottom, #52E3DB, #58AAD9); /* Mantém o gradiente */
     padding: 8px 0;
     border-radius: 20px 20px 0 0;
     position: relative;
     font-size: 9px;
     color: #2e2e2e;
+    opacity: 1;
+    z-index: 1; /* Mantém o conteúdo acima da camada */
+}
+header h1 {
+    font-size: 18px; /* Ajuste o tamanho da fonte, se necessário */
+    color: #2e2e2e;
+    position: relative;
+    top: 11px; /* Move o texto 20px para baixo */
+    margin: 0;
+}
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Camada escura com 30% de opacidade */
+    border-radius: 20px 20px 0 0; /* Respeita o border-radius */
+    z-index: -1; /* Coloca a camada atrás do conteúdo */
 }
 
 img{
@@ -72,10 +92,22 @@ img{
     padding: 10px 0;
     color: #666;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     cursor: pointer;
-    
-    margin-left: -200px;
+    margin-top: 20px;
+    margin-left: -254px;
+    font-style: italic;
+}
+.oters {
+    padding: 1px 0;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    margin-top: 14px;
+    margin-left: 4px;
+    font-style: italic;
+    margin-bottom: 13px;
 }
 .close-button {
     position: absolute;
@@ -86,9 +118,20 @@ img{
     color: #333;
     cursor: pointer;
   }
+  .close-button2 {
+    position: absolute;
+    left: 16px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    margin-top: 20px;
+  }
 .results {
     max-height: 500px;
     overflow-y: scroll;
+    line-height: 9px;
 }
 
 .results p {
@@ -96,6 +139,7 @@ img{
     margin: 0;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 8px;
 }
 
 .results p:hover {
@@ -113,10 +157,11 @@ img{
     flex-direction: column;
     align-items: center;
   }
+  
 
   .tabs {
     display: flex;
-    margin-top: 5px;
+    margin-top: 1px;
   }
  
   .tab {
@@ -131,7 +176,7 @@ img{
   }
  
   .tab.active {
-    background-color: rgb(255, 255, 255);
+    background-color: #E4E4E4;
     color: #00bfff;
     border-bottom: 2px solid rgb(214, 214, 214);
     border-radius: 10px;
@@ -141,6 +186,20 @@ img{
     width: 100px;
     color: rgb(37, 35, 35);
     margin-bottom: 10px;
+  }
+  .tab.activec{
+   
+    color: #00bfff;
+    border-bottom: 2px solid rgb(214, 214, 214);
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    color: rgb(37, 35, 35);
+    margin-bottom: 10px;
+    background-color: #11D6CA;
+
   }
  
   input[type="text"] {
