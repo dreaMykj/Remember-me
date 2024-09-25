@@ -169,7 +169,6 @@
    
   .interval-options {
     display: flex;
-    
     margin-bottom: 1px;
     margin-left: 73px;
     transform: scale(1.5);
@@ -180,7 +179,7 @@
   }
    
   .interval-options label {
-    font-size: 16px;
+    font-size: 14px;
   }
    
   .subtext {

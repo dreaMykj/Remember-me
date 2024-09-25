@@ -83,11 +83,14 @@ header h1 {
   }
  
   .tab.disabled {
-    color: #aaa;
+    background-color: #969696;
+    color: #efeded;
     cursor: not-allowed;
     border-radius: 10px;
     font-size: 16px;
     width: 100px;
+    opacity: 80%;
+    border: none;
   }
  
 .form {
@@ -115,13 +118,13 @@ p {
 }
  
 .checkbox-container input {
-    transform: scale(1.5); /* Aumenta o checkbox */
-    margin-right: 10px;
+    transform: scale(1.8); /* Aumenta o checkbox */
+    margin-right: 15px;
 }
  
 .dose-section, .interval-section, .time-section {
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 16px;
 }
  
 .dose-controls {
@@ -132,13 +135,17 @@ p {
  
 .control-button {
     background-color: #00bcd4;
-    color: black;
-    border: none;
-    padding: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 3px;
+    color: rgb(0, 0, 0);
     border: 1px solid black;
+    width: 25px;  /* Define uma largura suficiente para o botão ser quadrado */
+    height: 25px; /* Define a altura igual à largura para fazer um quadrado */
+    font-size: 19px;  /* Tamanho da fonte para que os símbolos + e - sejam visíveis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px; /* Mantém os cantos levemente arredondados */
+    margin: 0 5px; /* Espaçamento lateral entre os botões e o input */
 }
  
 input[type="number"] {
@@ -153,7 +160,7 @@ input[type="number"] {
  
 .interval-options {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: px;
 }
  
 .interval-options input {
@@ -162,9 +169,23 @@ input[type="number"] {
 }
  
 .interval-options label {
-    font-size: 14px;
-    margin-right: 90px;
+    font-size: 20px;
+    margin-right: 40px;
 }
+
+.interval-section{
+    margin-top: -20px;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #706e6e;
+}
+
+.subtext {
+    color: #999;
+    position: relative;
+    font-size: 12px;
+    margin-left: 190px;
+  }
  
 .time-section input[type="time"] {
     width: 40%;
@@ -174,6 +195,13 @@ input[type="number"] {
     border-radius: 5px;
     margin-top: 10px;
 }
+
+.time-section{
+    font-size: 15px;
+    color: #706e6e;
+    margin-left: 20px;
+}
+
  
 .submit-button {
     width: 70%;
